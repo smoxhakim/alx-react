@@ -1,0 +1,44 @@
+In React, props (short for properties) are a way to pass data from a parent component to a child component. They are essentially parameters that you can pass when rendering a component and provide the component with the information it needs to display or behave correctly.
+
+Think of components as reusable building blocks in your application. Each component can have its own set of props, which can be different for each instance of that component. By passing props to a component, you can customize its behavior and appearance based on the data you provide.
+
+To use props in React, you follow these steps:
+
+Define the props in the component's function or class declaration. Props are typically defined as parameters in the functional component or as properties in the class component.
+When rendering the component, provide the necessary values for the props. This is done by passing them as attributes to the component in the JSX code.
+Here's an example to illustrate how props work:
+
+
+// ParentComponent.js
+import React from 'react';
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+  const greeting = 'Hello, World!';
+
+  return (
+    <div>
+      <ChildComponent message={greeting} />
+    </div>
+  );
+}
+
+export default ParentComponent;
+In the above code, we have a parent component called ParentComponent that renders a child component called ChildComponent. The parent component passes a prop called message to the child component and sets its value to the greeting variable.
+
+
+// ChildComponent.js
+import React from 'react';
+
+function ChildComponent(props) {
+  return <div>{props.message}</div>;
+}
+
+export default ChildComponent;
+
+
+In the child component, ChildComponent, we define a functional component that takes props as a parameter. The props object contains all the props passed from the parent component. In this example, we access the message prop and display its value within a <div> element.
+
+So when the ParentComponent is rendered, it will display the ChildComponent with the message prop set to "Hello, World!". The child component will receive the prop and display its value, resulting in the output: "Hello, World!".
+
+Props allow you to pass data between components, making your code more modular and reusable. They provide a way for components to communicate and share information in a structured manner.
