@@ -19,7 +19,12 @@ function Notifications({ displayDrawer, listNotifications }) {
               {listNotifications && listNotifications.length > 0 ? (
                 listNotifications.map(({ id, html, type, value }) => (
                   <>
-                    <NotificationItem key={id} type={type} value={value} html={html} />
+                    <NotificationItem
+                      key={id}
+                      type={type}
+                      value={value}
+                      html={html}
+                    />
                     {/* <button
                       style={{ color: "#3a3a3a", fontWeight: "bold", background: "none", border: "none", fontSize: "10px", position: "absolute", right: "2px", top: "2px", cursor: "pointer" }}
                       aria-label="Close"
@@ -33,7 +38,17 @@ function Notifications({ displayDrawer, listNotifications }) {
                 <div className="">
                   <NotificationItem value="No new notification for now" />
                   <button
-                    style={{ color: "#3a3a3a", fontWeight: "bold", background: "none", border: "none", fontSize: "10px", position: "absolute", right: "2px", top: "2px", cursor: "pointer" }}
+                    style={{
+                      color: "#3a3a3a",
+                      fontWeight: "bold",
+                      background: "none",
+                      border: "none",
+                      fontSize: "10px",
+                      position: "absolute",
+                      right: "2px",
+                      top: "2px",
+                      cursor: "pointer",
+                    }}
                     aria-label="Close"
                     onClick={console.log("Close button has been clicked")}
                   >
